@@ -1,0 +1,1 @@
+public interface ClanRepository extends JpaRepository<Clan, Integer> {}

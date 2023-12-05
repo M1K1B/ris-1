@@ -1,0 +1,30 @@
+package com.example.demo.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.repositories.KategorijaRepository;
+import com.example.demo.repositories.ZaduzenjeRepository;
+
+import model.Zaduzenje;
+
+@Service
+public class ZaduzenjeService {
+	@Autowired
+	ZaduzenjeRepository zr;
+	
+	@Autowired
+	KategorijaRepository kr;
+	
+	public List<Zaduzenje> getKateogrije () {
+		return zr.findAll();
+	}
+	
+	public List<Zaduzenje> getZaduzenjaZakategoriju (int idKategorije) {
+		return zr.getZaduzenjaZaKategoriju(idKategorije);
+	}
+	
+	
+}

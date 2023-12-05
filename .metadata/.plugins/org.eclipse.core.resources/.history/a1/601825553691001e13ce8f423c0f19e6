@@ -1,0 +1,32 @@
+package com.example.demo.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.repositories.ClanRepository;
+import com.example.demo.repositories.KategorijaRepository;
+
+import jakarta.servlet.http.HttpServletRequest;
+import model.Clan;
+
+@Controller
+@RequestMapping("/clan/")
+public class ClanController {
+	
+	@Autowired
+	KategorijaRepository ks;
+	
+	@Autowired
+	ClanRepository cr;
+	
+	@ModelAttribute("clan")
+	public Clan getClan() {
+		return new Clan();
+	}
+}

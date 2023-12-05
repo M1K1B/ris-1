@@ -1,0 +1,33 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
+@RequestMapping("/knjiga/")
+public class KnjigaController {
+	@GetMapping(value="getIzdavaci")
+	public String getIzdavaci (HttpServletRequest request) {
+		List<String> izdavaci = new ArrayList<String>();
+		
+		izdavaci.add("Vulkan");
+		izdavaci.add("Laguna");
+		izdavaci.add("Finesa");
+		request.setAttribute("izdavaci", izdavaci);
+		
+		return "knjige-izdavaca.jsp";
+	}
+	
+	@GetMapping(value="checkKnjige")
+	public ModelAndView checkKnjige (@RequestParam("izdavac") String izdavac) {
+		ModealAndView mav = new ModelAndView("knjigeIzdavaca");
+	}
+}

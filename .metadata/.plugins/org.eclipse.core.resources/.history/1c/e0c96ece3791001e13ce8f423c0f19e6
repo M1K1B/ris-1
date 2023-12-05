@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Novi clan</title>
+	</head>
+	
+	<body>
+		<h2>Novi clan</h2>
+		<form:form action="/Biblioteka/clan/saveClan" method="POST" modelAttribute="clan">
+			<form:select items="${kategorije}" path="kategorija" itemValue="idKategorija" itemLabel="nazivKategorije" />
+		</form:form>
+	</body>
+</html>

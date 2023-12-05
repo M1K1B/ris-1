@@ -1,0 +1,32 @@
+package com.example.demo.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.services.ZaduzenjeService;
+
+import model.Kategorija;
+import model.Zaduzenje;
+
+@Controller
+@RequestMapping("/zaduzenje/")
+public class ZaduzenjeController {
+	
+	@Autowired
+	ZaduzenjeService zs;
+	
+	@GetMapping(value="zaduzenja")
+	public String zaduzenje () {
+		return "zaduzenja";
+	}
+	
+	@ModelAttribute("kategorije")
+	public List<Kategorija> getKategorije () {
+		return zs.getKateogrije();
+	}
+}

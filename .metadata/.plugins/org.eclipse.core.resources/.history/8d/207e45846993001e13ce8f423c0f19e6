@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>${ info.ime + " " + info.prezime }</title>
+</head>
+<c:set var="clBroj">${info.clanskiBroj}</c:set>
+<body>
+	<h2>Clan ${ clBroj }</h2>
+	<p>Ime: ${ info.ime + " " + info.prezime }</p>
+	<p>Ime: ${ info.ime + " " + info.prezime }</p>
+</body>
+</html>

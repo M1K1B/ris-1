@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!doctype html>
+<html>
+	<head>
+		<title>Zaduzenja</title>
+	</head>
+	<body>
+		<h2>Zaduzenja</h2>
+		<form:form action="/Biblioteka/zaduzenje/getZaduzenja" method="get">
+			<select name="kategorija">
+				<c:forEach items="${ kategorije }" var="k">
+					<option value="${ k.idKategorija }">${ k.nazivKategorije }</option>
+				</c:forEach>
+				<input value="Pronadji" type="submit" />
+			</select>
+		</form:form>
+		<c:if>
+		<table border="1">
+			<tr>
+				<th>Clanski broj</th>
+				<th>Ime</th>
+				<th>Prezime</th>
+				<th>kategorija</th>
+				<th>Datum rodjenja</th>
+				<th>Datum upisa</th>
+			</tr>
+			<c:forEach items="${ clanovi }" var="k">
+				<tr>
+					<td>${ k.clanskiBroj }</td>
+					<td>${ k.ime }</td>
+					<td>${ k.prezime }</td>
+					<td>${ k.kategorija.nazivKategorije }</td>
+					<td>${ k.datumRodjenja }</td>
+					<td>${ k.datumUpisa }</td>
+				</tr>
+			</c:forEach>
+		</table>
+		</c:if>
+	</body>
+</html>

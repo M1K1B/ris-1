@@ -1,0 +1,36 @@
+package com.example.demo.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
+@RequestMapping("/clan/")
+public class ClanController {
+	@GetMapping("getKategorije")
+	public String getKategorije (HttpServletRequest request) {
+		List<String> kategorije = new ArrayList();
+		
+		kategorije.add("radnik");
+		kategorije.add("student");
+		kategorije.add("penzioner");
+		
+		request.getSession().setAttribute("kategorije", kategorije);
+		
+		return "noviClan";
+	}
+	
+	@GetMapping("saveClan")
+	public String saveClan(HttpServletRequest request) {
+		String kategorija = request.getParameter("kategorija");
+		String ime = request.getParameter("ime");
+		String prezime = request.getParameter("prezime");
+		request.setAttribute("poruka", "Unet je clan "+ime+" "+prezime+" koji pripada kategoriji "+kategorija);
+	}
+}

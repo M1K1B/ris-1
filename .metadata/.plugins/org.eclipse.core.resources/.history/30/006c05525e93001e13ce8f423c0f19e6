@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Biblioteka</h2>
+	<a href="/Biblioteka/clan/sviClanovi">Svi članovi</a><br>
+	<a href="/Biblioteka/clan/unosClana">Novi član</a><br>
+	<a href="/Biblioteka/knjiga/getIzdavaci">Knjige za izdavača</a>
+	<a href="/Biblioteka/zaduzenja/svaZaduzenja">Zaduženja</a>
+</body>
+</html>

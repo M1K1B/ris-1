@@ -1,0 +1,4 @@
+@Controller
+@RequestMapping("/zaduzenje/")
+public class ZaduzenjeController {
+}

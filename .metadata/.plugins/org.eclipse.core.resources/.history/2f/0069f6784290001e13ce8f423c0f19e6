@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Novi clan</title>
+	</head>
+	
+	<body>
+		<h2>Novi clan</h2>
+		<select>
+			<option value="kategorija">kategorija</option>
+		</select>
+	</body>
+</html>
